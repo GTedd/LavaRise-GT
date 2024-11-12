@@ -1,128 +1,128 @@
 version: 4
 
 command:
-  usage:
-    - "&8------------------ &6&lLavaRise &8------------------"
-    - " &6<> &8= required, &6[] &8= optional"
-    - " &8- &6/lavarise &8(Displays a help prompt)"
-    - " &8- &6/lavarise arena list &8(Lists available arenas)"
-    - " &8- &6/lavarise arena create <name> &8(Creates an arena)"
-    - " &8- &6/lavarise arena delete <name> &8(Deletes an arena)"
-    - " &8- &6/lavarise arena info <name> &8(Displays arena information)"
-    - " &8- &6/lavarise arena set <name> lobby &8(Sets lobby point)"
-    - " &8- &6/lavarise arena set <name> gamearea <top/bottom> &8(Sets up game area)"
-    - " &8- &6/lavarise arena set <name> minplayers <value> &8(Sets minimum players)"
-    - " &8- &6/lavarise arena set <name> maxplayers <value> &8(Sets maximum players)"
-    - " &8- &6/lavarise arena set <name> pvp <true/false> &8(Enables/Disables PVP)"
-    - " &8- &6/lavarise arena set <name> lavalevel <value> &8(Sets maximum Y level for lava)"
-    - " &8- &6/lavarise join <name> &8(Joins arena)"
-    - " &8- &6/lavarise leave &8(Leaves arena)"
-    - "&8------------------------------------------------"
+ usage:
+   - "&8------------------ &6&lLavaRise &8------------------"
+   - " &6<> &8= required, &6[] &8= optional"
+   - " &8- &6/lavarise &8(显示帮助提示)"
+   - " &8- &6/lavarise arena list &8(列出可用竞技场)"
+   - " &8- &6/lavarise arena create <name> &8(创建竞技场)"
+   - " &8- &6/lavarise arena delete <name> &8(删除竞技场)"
+   - " &8- &6/lavarise arena info <name> &8(显示竞技场信息)"
+   - " &8- &6/lavarise arena set <name> lobby &8(设置大厅点)"
+   - " &8- &6/lavarise arena set <name> gamearea <top/bottom> &8(设置游戏区域)"
+   - " &8- &6/lavarise arena set <name> minplayers <value> &8(设置最小玩家数)"
+   - " &8- &6/lavarise arena set <name> maxplayers <value> &8(设置最大玩家数)"
+   - " &8- &6/lavarise arena set <name> pvp <true/false> &8(启用/禁用PVP)"
+   - " &8- &6/lavarise arena set <name> lavalevel <value> &8(设置熔岩最大Y坐标)"
+   - " &8- &6/lavarise join <name> &8(加入竞技场)"
+   - " &8- &6/lavarise leave &8(离开竞技场)"
+   "&8------------------------------------------------"
 
-  noPermissions: "&8[&6&lLavaRise&8] You are not allowed to do this!"
-  onlyPlayer: "&8[&6&lLavaRise&8] Only players have the ability to perform this action!"
-  arenaNotFound: "&8[&6&lLavaRise&8] Arena doesn't exist!"
-  expectedNumber: "&8[&6&lLavaRise&8] The expected input for the value was a numeric type."
+ noPermissions: "&8[&6&lLavaRise&8] 您没有权限执行此操作！"
+ onlyPlayer: "&8[&6&lLavaRise&8] 只有玩家才能执行此操作！"
+ arenaNotFound: "&8[&6&lLavaRise&8] 竞技场不存在！"
+ expectedNumber: "&8[&6&lLavaRise&8] 期望的输入为数值类型。"
 
-  arena:
-    list:
-      success: "&8[&6&lLavaRise&8] Available arenas: &6%arenas%"
-      empty: "&8[&6&lLavaRise&8] There are none available arenas!"
+ arena:
+   list:
+     success: "&8[&6&lLavaRise&8] 可用竞技场：&6%arenas%"
+     empty: "&8[&6&lLavaRise&8] 没有可用的竞技场！"
 
-    create:
-      success: "&8[&6&lLavaRise&8] &6%arenaName% &8successfully created!"
-      failed: "&8[&6&lLavaRise&8] &6%arenaName% &8already exists!"
+   create:
+     success: "&8[&6&lLavaRise&8] &6%arenaName% &8已成功创建！"
+     failed: "&8[&6&lLavaRise&8] &6%arenaName% &8已存在！"
 
-    delete:
-      success: "&8[&6&lLavaRise&8] &6%arenaName% &8successfully deleted!"
-      failed: "&8[&6&lLavaRise&8] &6%arenaName% &8doesn't exist!"
+   delete:
+     success: "&8[&6&lLavaRise&8] &6%arenaName% &8已成功删除！"
+     failed: "&8[&6&lLavaRise&8] &6%arenaName% &8不存在！"
 
-    set:
-      minplayers:
-        success: "&8[&6&lLavaRise&8] Minimum players have been set to &6%minimumPlayers%&8!"
-        lowValue: "&8[&6&lLavaRise&8] Minimum players must be less than maximum players!"
+   set:
+     minplayers:
+       success: "&8[&6&lLavaRise&8] 最小玩家数已设置为 &6%minimumPlayers%&8！"
+       lowValue: "&8[&6&lLavaRise&8] 最小玩家数必须小于最大玩家数！"
 
-      maxplayers:
-        success: "&8[&6&lLavaRise&8] Maximum players have been set to &6%maximumPlayers%&8!"
-        lowValue: "&8[&6&lLavaRise&8] Maximum players must be greater than minimal players!"
+     maxplayers:
+       success: "&8[&6&lLavaRise&8] 最大玩家数已设置为 &6%maximumPlayers%&8！"
+       lowValue: "&8[&6&lLavaRise&8] 最大玩家数必须大于最小玩家数！"
 
-      lobby:
-        success: "&8[&6&lLavaRise&8] The location of the lobby has been set to &6%blockX%, %blockY%, %blockZ% &8in &6%worldName%&8!"
+     lobby:
+       success: "&8[&6&lLavaRise&8] 大厅位置已设置为 &6%blockX%, %blockY%, %blockZ% &8在 &6%worldName%&8！"
 
-      gamearea:
-        invalidValue: "&8[&6&lLavaRise&8] Invalid game area type! Valid types: &6%types%&8"
-        success: "&8[&6&lLavaRise&8] The &6%type% &8game area location has been set to &6%blockX%, %blockY%, %blockZ% &8in &6%worldName%&8!"
+     gamearea:
+       invalidValue: "&8[&6&lLavaRise&8] 无效的游戏区域类型！有效类型：&6%types%&8"
+       success: "&8[&6&lLavaRise&8] &6%type% &8游戏区域位置已设置为 &6%blockX%, %blockY%, %blockZ% &8在 &6%worldName%&8！"
 
-      pvp:
-        invalidValue: "&8[&6&lLavaRise&8] Invalid PVP value! Valid values: &6%types%&8"
-        success: "&8[&6&lLavaRise&8] PVP has been set to &6%type%&8!"
+     pvp:
+       invalidValue: "&8[&6&lLavaRise&8] 无效的PVP值！有效值：&6%types%&8"
+       success: "&8[&6&lLavaRise&8] PVP已设置为 &6%type%&8！"
 
-      lavalevel:
-        noGameArea: "&8[&6&lLavaRise&8] Game area hasn't been set up yet!"
-        outOfRange: "&8[&6&lLavaRise&8] The Y level must be between &6%minY% &8and &6%maxY%&8!"
-        success: "&8[&6&lLavaRise&8] The maximum Y level for lava has been set to &6%lavaLevel%&8!"
+     lavalevel:
+       noGameArea: "&8[&6&lLavaRise&8] 游戏区域尚未设置！"
+       outOfRange: "&8[&6&lLavaRise&8] Y坐标必须在 &6%minY% &8和 &6%maxY% &8之间！"
+       success: "&8[&6&lLavaRise&8] 熔岩的最大Y坐标已设置为 &6%lavaLevel%&8！"
 
-    info:
-      success:
-        - "&8[&6&lLavaRise&8] &6%arenaName% &8information:"
-        - "  &8- Minimum Players: &6%minimumPlayers%"
-        - "  &8- Maximum Players: &6%maximumPlayers%"
-        - "  &8- Lava Level: &6%lavaLevel%"
-        - "  &8- PVP: &6%pvp%"
-        - "  &8- Lobby: &6%lobby%"
-        - "  &8- Game Area:"
-        - "    &8- Bottom: &6%gameAreaBottom%"
-        - "    &8- Top: &6%gameAreaTop%"
+   info:
+     success:
+       - "&8[&6&lLavaRise&8] &6%arenaName% &8信息："
+       - "  &8- 最小玩家数：&6%minimumPlayers%"
+       - "  &8- 最大玩家数：&6%maximumPlayers%"
+       - "  &8- 熔岩Y坐标：&6%lavaLevel%"
+       - "  &8- PVP：&6%pvp%"
+       - "  &8- 大厅：&6%lobby%"
+       - "  &8- 游戏区域："
+       - "    &8- 底部：&6%gameAreaBottom%"
+       - "    &8- 顶部：&6%gameAreaTop%"
 
-  join:
-    alreadyInArena: "&8[&6&lLavaRise&8] You are already in an arena!"
-    arenaIsntSetup: "&8[&6&lLavaRise&8] Arena hasn't been set up yet!"
-    arenaFull: "&8[&6&lLavaRise&8] Arena is full!"
-    arenaInGame: "&8[&6&lLavaRise&8] Arena is in-game!"
+ join:
+   alreadyInArena: "&8[&6&lLavaRise&8] 您已在竞技场中！"
+   arenaIsntSetup: "&8[&6&lLavaRise&8] 竞技场尚未设置！"
+   arenaFull: "&8[&6&lLavaRise&8] 竞技场已满！"
+   arenaInGame: "&8[&6&lLavaRise&8] 竞技场正在进行游戏！"
 
-  leave:
-    notInArena: "&8[&6&lLavaRise&8] You are not in arena!"
+ leave:
+   notInArena: "&8[&6&lLavaRise&8] 您不在竞技场中！"
 
 queue:
-  playerJoin: "&8[&6&lLavaRise&8] &6%playerName% &8joined the game! (&6%playerCount%&8/&6%maximumPlayers%&8)"
-  playerLeave: "&8[&6&lLavaRise&8] &6%playerName% &8left the game! (&6%playerCount%&8/&6%maximumPlayers%&8)"
+ playerJoin: "&8[&6&lLavaRise&8] &6%playerName% &8加入了游戏！(&6%playerCount%&8/&6%maximumPlayers%&8)"
+ playerLeave: "&8[&6&lLavaRise&8] &6%playerName% &8离开了游戏！(&6%playerCount%&8/&6%maximumPlayers%&8)"
 
-  cancelled: "&8[&6&lLavaRise&8] Game countdown stopped due to lack of players!"
-  gameStartingIn: "&8[&6&lLavaRise&8] Game starting in &6%timeLeft%&8!"
+ cancelled: "&8[&6&lLavaRise&8] 由于玩家不足，游戏倒计时已取消！"
+ gameStartingIn: "&8[&6&lLavaRise&8] 游戏将在 &6%timeLeft%&8 后开始！"
 
-  items:
-    leave:
-      name: "&cLeave"
-      lore:
-        - "&8Right-click to leave the game"
+ items:
+   leave:
+     name: "&cLeave"
+     lore:
+       - "&8右键点击以离开游戏"
 
-  scoreboard:
-    title: "&6&lLavaRise"
-    durationWaiting: "Waiting.."
-    lines:
-      - "&8Starting in: &6%duration%"
-      - "&8Players: &6%currentPlayers%&8/&6%maximumPlayers%"
+ scoreboard:
+   title: "&6&lLavaRise"
+   durationWaiting: "等待中.."
+   lines:
+     - "&8开始时间：&6%duration%"
+     - "&8玩家：&6%currentPlayers%&8/&6%maximumPlayers%"
 
 game:
-  scoreboard:
-    title: "&6&lLavaRise"
-    lines:
-      - "&8Players Left: &6%playersLeft%"
-      - "&8Event: &6%event%"
-      - ""
-      - "&8Lava Y: &6%lavaY%"
-      - "&8Time: &6%gameTime%"
+ scoreboard:
+   title: "&6&lLavaRise"
+   lines:
+     - "&8剩余玩家：&6%playersLeft%"
+     - "&8事件：&6%event%"
+     - ""
+     - "&8熔岩Y坐标：&6%lavaY%"
+     - "&8时间：&6%gameTime%"
 
-  phase:
-    grace: "Grace"
-    lava: "Lava"
-    deathmatch: "Deathmatch"
+ phase:
+   grace: "预备"
+   lava: "熔岩"
+   deathmatch: "死亡匹配"
 
-  events:
-    gameStart: "&8[&6&lLavaRise&8] Game started! Have fun!"
-    gameEnded: "&8[&6&lLavaRise&8] Game ended! Thanks for playing."
-    playerDeath: "&8[&6&lLavaRise&8] &6%playerName% &8died!"
-    playerKilled: "&8[&6&lLavaRise&8] &6%playerName% &8killed by &6%killerName%&8!"
-    lavaPhaseStart: "&8[&6&lLavaRise&8] Lava is &6rising&8!"
-    lavaPhaseEnd: "&8[&6&lLavaRise&8] Lava &6stopped rising&8!"
-    pvpEnabled: "&8[&6&lLavaRise&8] PVP has been &6enabled&8!"
+ events:
+   gameStart: "&8[&6&lLavaRise&8] 游戏开始！祝您玩得开心！"
+   gameEnded: "&8[&6&lLavaRise&8] 游戏结束！感谢您的参与。"
+   playerDeath: "&8[&6&lLavaRise&8] &6%playerName% &8阵亡！"
+   playerKilled: "&8[&6&lLavaRise&8] &6%playerName% &8被 &6%killerName% &8击杀！"
+   lavaPhaseStart: "&8[&6&lLavaRise&8] 熔岩正在 &6上升&8！"
+   lavaPhaseEnd: "&8[&6&lLavaRise&8] 熔岩 &6停止上升&8！"
+   pvpEnabled: "&8[&6&lLavaRise&8] PVP已 &6启用&8！"
