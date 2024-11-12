@@ -5,7 +5,7 @@ author: goodbyepavlyi
 
 commands:
   lavarise:
-    description: Main command for the plugin LavaRise
+    description: 插件 LavaRise 的主要命令
 
 permissions:
   lavarise.admin:
