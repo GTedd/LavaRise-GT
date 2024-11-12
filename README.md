@@ -1,53 +1,53 @@
-# LavaRise - Minecraft Spigot Plugin
+# LavaRise - Minecraft Spigot 插件
 
-**LavaRise** is an exciting Minecraft minigame plugin where players must survive in a world that is slowly filling with lava. Players must outlast each other as the lava rises, using strategy, items, and sometimes PvP combat, depending on the configuration.
+**LavaRise** 是一个令人兴奋的 Minecraft 迷你游戏插件，玩家必须在一个慢慢充满熔岩的世界中生存。随着熔岩的上升，玩家必须使用策略、物品，有时还需要 PvP 战斗，具体取决于配置。
 
-## Features:
+## 特点:
 
-- **Fully Customizable Configurations**: 
-  - Define the game arena, lobby location, player limits, PvP settings, and the maximum lava level. You have full control over all game mechanics through the configuration.
+- **完全可定制的配置**: 
+  - 定义游戏竞技场、大厅位置、玩家限制、PvP 设置和最大熔岩级别。您可以通过配置完全控制所有游戏机制。
   
-- **Multi-Arena Support**: 
-  - Create multiple arenas with different settings and configurations.
+- **多竞技场支持**: 
+  - 创建具有不同设置和配置的多个场馆。
 
-- **Scoreboard Integration**: 
-  - Display the current game status, lava level, and player information directly on a scoreboard during the game.
+- **记分版支持**: 
+  - 在游戏过程中，直接在记分板上显示当前游戏状态、熔岩等级和玩家信息。
 
-- **Spectator Mode**: 
-  - When players are eliminated, they can spectate the ongoing game.
+- **旁观者模式**: 
+  - 当玩家被淘汰时，他们可以观看正在进行的比赛。
 
-## Permissions
-- lavarise.admin - for all admin commands
-- lavarise.updatechecker - for receiving update notifications
+## 权限
+- lavarise.admin - 用于所有 admin 命令
+- lavarise.updatechecker - 用于接收更新通知
 
-## Commands
+## 命令
 
 [Command List and Usage](https://github.com/goodbyepavlyi/LavaRise/blob/master/docs/commands.md)
 
-## Config
+## 配置指南
 
 [Configuration Guide](https://github.com/goodbyepavlyi/LavaRise/blob/master/docs/config.md)
 
-## Installation
+## 安装
 
-1. Download the latest LavaRise release from the [GitHub releases](https://github.com/goodbyepavlyi/LavaRise/releases).
-2. Drop the JAR file into your server's `plugins` folder.
-3. Start your server, and the configuration files will be generated.
-4. Customize the configuration files to suit your needs.
-5. Restart the server, and enjoy the game!
+1. 从 GitHub 版本下载最新版本 [GitHub releases](https://github.com/goodbyepavlyi/LavaRise/releases).
+2. 将 JAR 文件拖放到服务器的"plugins"文件夹中。
+3. 启动服务器，将生成配置文件。
+4. 自定义配置文件以满足您的需要。
+5. 重新启动服务器，享受游戏吧！
 
-## Support
+## 支持
 
-For bug reports, feature requests, or any other inquiries, please open an issue on the [GitHub repository](https://github.com/goodbyepavlyi/LavaRise/issues).
+有关错误报告、功能请求或任何其他查询，请在 GitHub 存储库上打开问题。 [GitHub repository](https://github.com/goodbyepavlyi/LavaRise/issues).
 
-## Links
+## 链接
 - [SpigotMC](https://www.spigotmc.org/resources/lavarise-rise-above-the-lava.111135/)
 - [Donations](https://github.com/sponsors/goodbyepavlyi)
 
-## Contributing
+## 捐款
 
-We welcome contributions from the community to enhance the LavaRise plugin.
+我们欢迎社区为增强 LavaRise 插件做出贡献。
 
-## License
+## 许可证
 
-LavaRise is released under the [MIT License](https://opensource.org/licenses/MIT). Please see the [LICENSE](https://github.com/goodbyepavlyi/LavaRise/blob/master/LICENSE) file for more details.
+LavaRise 在 MIT 许可证下发布。 [MIT License](https://opensource.org/licenses/MIT). 有关更多详细信息请参阅 [LICENSE](https://github.com/goodbyepavlyi/LavaRise/blob/master/LICENSE) 文件。
