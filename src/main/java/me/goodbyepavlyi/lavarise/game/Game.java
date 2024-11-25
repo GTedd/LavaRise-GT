@@ -81,6 +81,7 @@ public class Game {
             }
             case DEATHMATCH -> {
                 this.enablePVP();
+                this.startDeathmatchDamage();
                 this.arena.announceMessage(Arena.AnnouncementType.GAME_LAVAPHASE_END);
                 this.playVisualEffect(Config.VisualEffectType.DEATHMATCH);
             }
@@ -141,6 +142,7 @@ public class Game {
 
     public void stop() {
         Logger.debug(String.format("Stopping game in arena '%s'.", this.arena.getName()));
+        this.arena.setState(Arena.State.ENDED);
         this.arena.announceMessage(Arena.AnnouncementType.GAME_END);
 
         this.gameScoreboard.stopScoreboardUpdateTask();
@@ -262,9 +264,12 @@ public class Game {
 
         this.checkForWinner();
 
-        Config.VisualEffectType type = this.getWinner().getPlayerUUID() == arenaPlayer.getPlayerUUID() ? Config.VisualEffectType.WINNER : Config.VisualEffectType.SPECTATOR;
-        Config.VisualEffectTitleConfig titleConfig = this.instance.getConfiguration().getGameVisualEffect(type).getTitle();
-        player.sendTitle(titleConfig.getTitle(), titleConfig.getSubtitle(), titleConfig.getFadeIn(), titleConfig.getStay(), titleConfig.getFadeOut());
+        ArenaPlayer winner = this.getWinner();
+        if (winner != null) {
+            Config.VisualEffectType type = this.getWinner().getPlayerUUID() == arenaPlayer.getPlayerUUID() ? Config.VisualEffectType.WINNER : Config.VisualEffectType.SPECTATOR;
+            Config.VisualEffectTitleConfig titleConfig = this.instance.getConfiguration().getGameVisualEffect(type).getTitle();
+            player.sendTitle(titleConfig.getTitle(), titleConfig.getSubtitle(), titleConfig.getFadeIn(), titleConfig.getStay(), titleConfig.getFadeOut());
+        }
     }
 
     private void enablePVP() {
@@ -321,5 +326,26 @@ public class Game {
                 );
             }
         }
+    }
+
+    private void startDeathmatchDamage() {
+        if (!this.instance.getConfiguration().GameDeathmatchDamageEnabled()) {
+            Logger.debug(String.format("Deathmatch damage is disabled in arena '%s'.", this.arena.getName()));
+            return;
+        }
+
+        Logger.debug(String.format("Starting deathmatch damage in arena '%s'.", this.arena.getName()));
+
+        this.arena.getTasks().add(new BukkitRunnable() {
+            @Override
+            public void run() {
+                arena.getPlayersExceptSpectators()
+                    .forEach(arenaPlayer -> arenaPlayer.getPlayer().damage(instance.getConfiguration().GameDeathmatchDamageAmount()));
+            }
+        }.runTaskTimer(
+            this.instance,
+            this.instance.getConfiguration().GameDeathmatchDamageDelay() * 20L,
+            this.instance.getConfiguration().GameDeathmatchDamageInterval() * 20L
+        ));
     }
 }
